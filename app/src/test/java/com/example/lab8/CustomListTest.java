@@ -65,4 +65,18 @@ public class CustomListTest {
         Assertions.assertFalse(list.hasCity(city));
     }
 
+    @Test
+    void testCountCities(){
+        list = MockCityList();
+
+        // add Calgary, only Edmonton and Calgary are in list (2 cities)
+        City city = new City("Calgary", "Alberta");
+        list.addCity(city);
+        assertEquals(1, list.countCities());
+
+        // delete and check is list is only Edmonton (1 city)
+        list.delete(city);
+        assertEquals(0, list.countCities());
+    }
+
 }
