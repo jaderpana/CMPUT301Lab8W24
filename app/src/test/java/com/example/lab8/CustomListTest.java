@@ -44,10 +44,11 @@ public class CustomListTest {
         City city2 = new City("Toronto", "Ontario");
 
         // only add city1
-        list.add(city1);
+        list.addCity(city1);
 
         // hasCity calls
         assertTrue(list.hasCity(city1)); // should be true
         Assertions.assertFalse(list.hasCity(city2)); // should be false
     }
+
 }
